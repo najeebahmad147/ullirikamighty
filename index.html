@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J.A.R.V.I.S. | Personal AI HUD</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+  <div class="hud-container">
+    <!-- Top Status Bar -->
+    <header class="top-bar">
+      <div class="stat-box">SYSTEM: <span class="online">ONLINE</span></div>
+      <div class="stat-box" id="clock">00:00:00</div>
+      <div class="stat-box" id="battery">PWR: --%</div>
+    </header>
+
+    <!-- Center Arc Reactor / AI Core -->
+    <main class="core-section">
+      <div class="reactor-wrapper" id="reactor">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+        <button id="mic-btn" title="Click to Speak">
+          <span>INITIATE</span>
+        </button>
+      </div>
+      <p id="status-text">Click the Core to Activate Voice Protocol</p>
+    </main>
+
+    <!-- Terminal / AI Output Log -->
+    <section class="terminal-box">
+      <div id="chat-log">
+        <p class="ai-msg">[J.A.R.V.I.S.]: Systems initialized. Awaiting your command, Boss.</p>
+      </div>
+      <div class="input-area">
+        <input type="text" id="text-input" placeholder="Type command or speak..." />
+        <button id="send-btn">EXEC</button>
+        <button id="key-btn" title="Set Gemini API Key">🔑 API</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- API Key Modal (Safe for GitHub Pages) -->
+  <div id="api-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>ENTER GEMINI API KEY</h3>
+      <p>Your key stays safely in your browser's local storage.</p>
+      <input type="password" id="api-key-input" placeholder="AIzaSy..." />
+      <div class="modal-actions">
+        <button id="save-key-btn">SAVE PROTOCOL</button>
+        <button id="close-modal-btn">CANCEL</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
